@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <style>
+        body {
+            background-color: #000000;
+        }
+        .sun {
+            width: 100px;
+            height: 100px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            box-shadow: 0 0 20px #ffcc00;
+        }
+        .planet {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 10px #ffffff;
+        }
+        #mercury { background-color: #d3d3d3; }
+        #venus { background-color: #f7a031; }
+        #earth { background-color: #4ba2f9; }
+        #mars { background-color: #e57373; }
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    <div id="mercury" class="planet" style="top: 20%; left: 35%;"></div>
+    <div id="venus" class="planet" style="top: 35%; left: 70%;"></div>
+    <div id="earth" class="planet" style="top: 50%; left: 30%;"></div>
+    <div id="mars" class="planet" style="top: 70%; left: 10%;"></div>
+</body>
+</html>

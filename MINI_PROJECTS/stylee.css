@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(214, 214, 214,);
+}
+.container{
+    margin: 160px 0 0 200px;
+}
+.row{
+    width: 100px;
+    height: 60px;
+}

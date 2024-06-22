@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Clock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="clock">
+    <div class="hour-hand" id="hourHand"></div>
+    <div class="minute-hand" id="minuteHand"></div>
+    <div class="second-hand" id="secondHand"></div>
+    <div class="center-circle"></div>
+  </div>
+
+  <script src="script.js"></script>
+  
+  <style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 10px solid #333;
+  border-radius: 50%;
+}
+
+.hour-hand, .minute-hand, .second-hand {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #333;
+  top: 50%;
+  transform-origin: 100%;
+  transform-style: preserve-3d;
+}
+
+.hour-hand {
+  z-index: 3;
+  background-color: #444;
+}
+
+.minute-hand {
+  z-index: 2;
+  background-color: #555;
+}
+
+.second-hand {
+  z-index: 1;
+  background-color: #f00;
+}
+
+.center-circle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+
+
+  </style>
+
+  <script>
+
+function updateClock() {
+  const now = new Date();
+
+  const hour = now.getHours();
+  const minute = now.getMinutes();
+  const second = now.getSeconds();
+
+  const hourHand = document.getElementById("hourHand");
+  const minuteHand = document.getElementById("minuteHand");
+  const secondHand = document.getElementById("secondHand");
+
+  const hourRotation = (hour % 12) * 30 + minute / 2;
+  const minuteRotation = minute * 6;
+  const secondRotation = second * 6;
+
+  hourHand.style.transform = `rotate(${hourRotation}deg)`;
+  minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
+  secondHand.style.transform = `rotate(${secondRotation}deg)`;
+}
+
+setInterval(updateClock, 1000);
+
+  </script>
+</body>
+</html>

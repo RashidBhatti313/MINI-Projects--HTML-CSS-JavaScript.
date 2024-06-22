@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Stunning Calculator</title>
+
+</head>
+
+<body>
+
+  <div id="calculator">
+    <div class="display" id="result">0</div>
+
+    <div class="row">
+      <div class="button" onclick="clearExpression()">C</div>
+      <div class="button" onclick="addToExpression('/')">÷</div>
+      <div class="button" onclick="addToExpression('*')">*</div>
+      <div class="button orange" onclick="calculateResult()">=</div>
+    </div>
+
+    <div class="row">
+      <div class="button" onclick="addToExpression('7')">7</div>
+      <div class="button" onclick="addToExpression('8')">8</div>
+      <div class="button" onclick="addToExpression('9')">9</div>
+      <div class="button" onclick="addToExpression('-')">-</div>
+    </div>
+
+    <div class="row">
+      <div class="button" onclick="addToExpression('4')">4</div>
+      <div class="button" onclick="addToExpression('5')">5</div>
+      <div class="button" onclick="addToExpression('6')">6</div>
+      <div class="button" onclick="addToExpression('+')">+</div>
+    </div>
+
+    <div class="row">
+      <div class="button" onclick="addToExpression('1')">1</div>
+      <div class="button" onclick="addToExpression('2')">2</div>
+      <div class="button" onclick="addToExpression('3')">3</div>
+      <div class="button" onclick="addToExpression('.')">.</div>
+    </div>
+
+    <div class="row">
+      <div class="button" onclick="addToExpression('0')">0</div>
+      <div class="button" onclick="addToExpression('$')">$</div>
+      <div class="button" onclick="addToExpression('%')">%</div>
+      <div class="button" onclick="addToExpression('^')">^</div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    #calculator {
+      width: 320px;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 50px auto;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .display {
+      font-size: 36px;
+      text-align: right;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button {
+      width: 70px;
+      height: 70px;
+      font-size: 24px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      background-color: #e8e8e8;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: #d0d0d0;
+    }
+
+    .button.orange {
+      background-color: #ff8c00;
+      color: #fff;
+    }
+  </style>
+  
+  <script>
+    let expression = '';
+
+    function addToExpression(value) {
+      expression += value;
+      document.getElementById('result').innerText = expression;
+    }
+
+    function calculateResult() {
+      try {
+        expression = eval(expression).toString();
+        document.getElementById('result').innerText = expression;
+      } catch (error) {
+        document.getElementById('result').innerText = 'Error';
+      }
+    }
+
+    function clearExpression() {
+      expression = '';
+      document.getElementById('result').innerText = '0';
+    }
+  </script>
+</body>
+
+</html>

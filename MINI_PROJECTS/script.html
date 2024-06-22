@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Tutorial</title>
+</head>
+<body>
+
+  <h1>Welcome to the JavaScript Tutorial</h1>
+
+  <h2>Example 1: Hello, World!</h2>
+  <button onclick="sayHello()">Click Me</button>
+
+  <h2>Example 2: Variables and Data Types</h2>
+  <script>
+    let message = "Hello, JavaScript!";
+    const pi = 3.14;
+
+    console.log(message);
+    console.log(pi);
+  </script>
+
+  <h2>Example 3: Functions</h2>
+  <button onclick="addNumbers(5, 10)">Add Numbers</button>
+
+  <h2>Example 4: Conditional Statements</h2>
+  <script>
+    function checkAge(age) {
+      if (age < 18) {
+        console.log("You are a minor.");
+      } else if (age >= 18 && age < 60) {
+        console.log("You are an adult.");
+      } else {
+        console.log("You are a senior citizen.");
+      }
+    }
+    checkAge(25);
+  </script>
+
+  <h2>Example 5: Loops</h2>
+  <script>
+    for (let i = 0; i < 5; i++) {
+      console.log("Iteration " + i);
+    }
+  </script>
+
+</body>
+</html>
